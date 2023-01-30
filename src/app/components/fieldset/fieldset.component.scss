@@ -1,0 +1,23 @@
+@import "./../../../styles";
+
+fieldset {
+    padding: 5px 20px;
+    legend {
+        display: flex;
+        align-content: center;
+        cursor: pointer;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: black;
+        color: white;
+        .text {
+            // border: 1px solid white;
+            align-items: center;
+        }
+        mat-icon {
+            color: white;
+            // border: 1px solid white;
+        }
+    }
+}

@@ -34,6 +34,7 @@ import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.compo
 import { SocialMediaBarComponent } from './social-media-bar/social-media-bar.component';
 import { BottomSheetComponent } from './bottom-sheet/bottom-sheet.component';
 import { FieldsetComponent } from './fieldset/fieldset.component';
+import { PillComponent } from './pill/pill.component';
 
 
 
@@ -69,6 +70,7 @@ import { FieldsetComponent } from './fieldset/fieldset.component';
         SocialMediaBarComponent,
         BottomSheetComponent,
         FieldsetComponent,
+        PillComponent,
     ],
     imports: [
         CommonModule,

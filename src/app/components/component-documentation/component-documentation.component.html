@@ -1,4 +1,10 @@
 <main>
+    <app-card [title]="'Pill'"
+        [subTitle]="'Component'"
+        [lesson]="64"
+        [purpose]="'Build a pill component that takes in a label an optional icon and a style type.'"
+        [topics]="['@Component90', '@Input()', 'enum', 'ngClass', '*ngIf']">
+    </app-card>
 
     <app-card [title]="'Fieldset'"
         [subTitle]="'Component'"
@@ -6,7 +12,6 @@
         [lesson]="63"
         [purpose]="'Build a fieldset component that can be collapsed and passes in the content.'">
         <div body>
-            <app-email-form></app-email-form>
             <app-fieldset [legend]="'Address'">
                 <app-email-form></app-email-form>
             </app-fieldset>

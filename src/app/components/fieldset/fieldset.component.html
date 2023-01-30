@@ -1,5 +1,15 @@
 <fieldset>
-    <legend>{{legend}}</legend>
+    <legend (click)="toggle()">
+        <!-- <i [ngClass]="['fas', isOpen ? 'fa-minus' : 'fa-plus']"></i> -->
+        <mat-icon *ngIf="!isOpen"
+            style="font-family: 'Material Icons';">add</mat-icon>
+        <mat-icon *ngIf="isOpen"
+            style="font-family: 'Material Icons';">remove</mat-icon>
+        <div class="text">
+
+            {{legend}}
+        </div>
+    </legend>
     <div *ngIf="isOpen">
         <ng-content></ng-content>
     </div>

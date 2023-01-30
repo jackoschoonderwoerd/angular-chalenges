@@ -8,6 +8,7 @@ import { SnackbarComponent } from '../snackbar/snackbar.component';
 import { SnackbarService } from '../../services/snackbar/snackbar.service';
 import { SocialMediaIcon } from '../social-media-bar/social-media-icon.interface';
 import { SocialMedia } from '../social-media-bar/social-media.enum';
+import { PillType } from '../pill/pill-type.enum';
 
 @Component({
     selector: 'app-component-documentation',
@@ -15,6 +16,9 @@ import { SocialMedia } from '../social-media-bar/social-media.enum';
     styleUrls: ['./component-documentation.component.scss']
 })
 export class ComponentDocumentationComponent {
+
+    // 64 Pill Component
+    public PillType = PillType;
 
     // SocialMediaBar
 
