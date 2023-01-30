@@ -1,0 +1,45 @@
+<!-- <div class="email-form-container">
+    <div class="email-container">
+        <div class="form-container">
+            <h2>Get in touch</h2>
+            <form class="email-form"
+                [formGroup]="form"
+                (ngSubmit)="submitMessage()">
+                <div class="">
+                    <div class="name"
+                        [class.error]="form.get('name').errors && form.get('name').touched">
+                        <input type="text"
+                            placeholder="Your Name"
+                            formControlName="name">
+                        <mat-icon style="font-family: Material Icons;">account_circle</mat-icon>
+                    </div>
+                    <small class="error"
+                        *ngIf="form.get('name').errors && form.get('name').touched">
+                        Name is too short
+                    </small>
+                </div>
+                <div class="">
+                    <div class="email"
+                        [class.error]="form.get('email').errors && form.get('email').touched">
+                        <input type="email"
+                            placeholder="email"
+                            formControlName="email">
+                        <mat-icon style="font-family: Material Icons;">email</mat-icon>
+                    </div>
+                    <small class="error"
+                        *ngIf="form.get('email').errors && form.get('email').touched">
+                        This is not a valid email address.
+                    </small>
+                </div>
+                <div class="message">
+                    <textarea placeholder="Your Message"
+                        formControlName="message"></textarea>
+                    <mat-icon style="font-family: Material Icons;">message</mat-icon>
+                </div>
+                <button [disabled]="form.invalid"
+                    type="submit">Submit</button>
+
+            </form>
+        </div>
+    </div>
+</div> -->

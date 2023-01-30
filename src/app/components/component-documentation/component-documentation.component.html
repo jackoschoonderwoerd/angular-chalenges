@@ -1,0 +1,337 @@
+<main>
+
+    <app-card [title]="'Fieldset'"
+        [subTitle]="'Component'"
+        [topics]="['@component()', '@Input()', '*ngIf', '(click)', 'ngClass', 'ng-content']"
+        [lesson]="63"
+        [purpose]="'Build a fieldset component that can be collapsed and passes in the content.'">
+        <div body>
+            <app-email-form></app-email-form>
+            <app-fieldset [legend]="'Address'">
+                <app-email-form></app-email-form>
+            </app-fieldset>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Bottom Sheet'"
+        [subTitle]="'Component'"
+        [topics]="['@Component', 'ng-content', '(click)', 'dynamic class binding']"
+        [lesson]="'62'"
+        [purpose]="'Build a bottom sheet component that can take in whatever content you would like'">
+        <div body>
+            <app-bottom-sheet #bottomSheet>
+                <h1 (click)="bottomSheet.hide()">Hello</h1>
+                <h1 (click)="bottomSheet.hide()">World!</h1>
+            </app-bottom-sheet>
+            <div class="footer"
+                footer>
+                <button (click)="bottomSheet.show()">Show</button>
+            </div>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Social Media Bar'"
+        [lesson]="61"
+        [subTitle]="'Component'"
+        [topics]="['@Component', '@Input', 'enum', 'ng-container', 'ngSwitch', 'ngSwitchCase', '*ngFor']"
+        [purpose]="'Build a social media bar that floats on the right hand side'">
+        <div body>
+            <app-social-media-bar [socialMedia]="socialMedia"></app-social-media-bar>
+        </div>
+    </app-card>
+
+
+    <app-card [title]="'Skeleton Loader'"
+        [lesson]="60"
+        [subTitle]="'Component'"
+        [topics]="['@Component()', '@Input', 'ngStyle']"
+        [purpose]="'Build a skeleton loader that takes in a width and height. It should have a nace loading animation as well'">
+        <div body>
+            <app-skeleton-loader *ngIf="!loaded"></app-skeleton-loader>
+
+            <p *ngIf="loaded">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi vel distinctio fuga numquam porro atque ab possimus minus voluptate dignissimos sint laboriosam molestiae odio aliquid fugiat nam ex vitae, et consequuntur modi. Odit incidunt natus asperiores iusto enim deleniti delectus eveniet nam a optio. Officiis iure molestiae maxime voluptas autem?</p>
+        </div>
+        <button footer
+            (click)="loaded = !loaded">Toggle</button>
+    </app-card>
+
+    <app-card [title]="'Footer'"
+        [lesson]="58"
+        [subTitle]="'Component'"
+        [topics]="['@Component()']"
+        [purpose]="'Build a footer component with the current year and social media available'">
+        <app-footer body></app-footer>
+    </app-card>
+
+    <app-card [title]="'Countdown Timer'"
+        [lesson]="54"
+        [subTitle]="'Component'"
+        [topics]="['@Component', '@Input', 'Math.floor()']"
+        [purpose]="'Build a countdown timer component that outputs the days, hours, minutes and seconds'">
+        <app-countdown-timer body
+            [time]="'Jan 25, 2024 11:33:44'"></app-countdown-timer>
+    </app-card>
+
+    <app-card [title]="'Simple Popup'"
+        [lesson]="53"
+        [subTitle]="'Component'"
+        [topics]="['@Component', '@Input', 'ng-content', 'fadeInOutAnimation', '*ngIf','(click)', 'off()', 'delay()','pipe()', 'unsubscribe']"
+        [purpose]="'Create a simple popup that is shown on click above the element'">
+        <div class=""
+            body>
+
+            <app-simple-popup [message]="'Simple Popup Component'">
+                <h1>Hello World</h1>
+            </app-simple-popup>
+        </div>
+    </app-card>
+
+    <!-- <app-card [title]="'Snackbar'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input', 'of()', 'pipe()', 'delay()', 'unsubscribe()', 'ViewChild()']"
+        [purpose]="'Build a snackbar that takes in a message. It should fade in from the bottom and fade back out to the bottom'">
+        <div class=""
+            body>
+
+            <app-snackbar [message]="'Snackbar Example'"
+                #snackbar></app-snackbar>
+            <button (click)="snackbar.showMessage()">Show Snackbar</button>
+        </div>
+    </app-card> -->
+
+    <app-card [title]="'Banner Cut Out'"
+        [lesson]="50"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()']"
+        [purpose]="'Create a banner with text centered and merge the background with the text'">
+        <app-banner-cut-out body></app-banner-cut-out>
+    </app-card>
+
+    <app-card title="Button Toggle"
+        [lesson]="49"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '@Output()', '*ngFor', '(click)']"
+        [purpose]="'Build a button group / toggle component. Define a model of options to take in and on click export selection'">
+        <app-button-toggle body
+            [options]="buttonToggleOptions"></app-button-toggle>
+    </app-card>
+
+    <app-card [title]="'Ribbon'"
+        [lesson]="48"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', 'Enums', 'ngClass']"
+        [purpose]="'Build a ribbon component that has an error, info, success and warning type. It also has a location of top-right, top-left, bottom-left of bottom-right.'">
+        <div class=""
+            body>
+            <app-ribbon [content]="'Beta-Course'"
+                [location]="ribbonStyle.location"
+                [type]="ribbonStyle.type">
+            </app-ribbon>
+            <button (click)="ribbonStyle.location = RibbonLocation.TopRight">Top-Right</button>
+            <button (click)="ribbonStyle.location= RibbonLocation.TopLeft">Top-Left</button>
+            <button (click)="ribbonStyle.location= RibbonLocation.BottomLeft">Bottom-Left</button>
+            <button (click)="ribbonStyle.location= RibbonLocation.BottomRight">Bottom-Right</button>
+
+            <button (click)="ribbonStyle.type = RibbonType.Info">Info</button>
+            <button (click)="ribbonStyle.type = RibbonType.Error">Error</button>
+            <button (click)="ribbonStyle.type = RibbonType.Success">Success</button>
+            <button (click)="ribbonStyle.type = RibbonType.Warning">Warrning</button>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Email Form'"
+        [lesson]="45"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', 'FormBuilder', 'FormGroup', 'Validators', '*ngIF', 'formControlName', '(ngSubmit)']"
+        [purpose]="'Build a reactive form that has a required input for email (validated) and name (validated) with an optional message. Disable submit button id conditions are not met'">
+        <app-email-form body></app-email-form>
+    </app-card>
+
+    <app-card [title]="'Sort Table'"
+        [lesson]="44"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', 'Output', 'app-simple-table']"
+        [purpose]="'Build a sort table that sorts on a boolean, number, string and date'">
+        <app-sort-table body></app-sort-table>
+    </app-card>
+
+    <app-card [title]="'Tab'"
+        [lesson]="41"
+        [subTitle]="'Components'"
+        [topics]="['@Component()','@Input()', '(click)', '*ngFor', 'ng-content']"
+        [purpose]="'Build a Tab Component that takes in an array of tabs and displays the content selected'">
+        <app-tab body
+            [tabs]="tabs"
+            (selectedTabIndex)="selectedTab = $event;">
+            <app-paging *ngIf="selectedTab === 0"
+                [totalItems]="200"></app-paging>
+            <app-counter-input *ngIf="selectedTab === 1"></app-counter-input>
+        </app-tab>
+    </app-card>
+
+    <app-card [title]="'Paging'"
+        [lesson]="40"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '@Output', 'get', '(click)', '*ngFor']"
+        [purpose]="'Build a paging component that takes in a number of total items to be paginated and can have a page count. Have a stepper on either end to go forward 2 pages or back 2 pages'">
+        <app-paging body
+            [totalItems]="200"></app-paging>
+    </app-card>
+
+    <app-card [title]="'Simple Table'"
+        [lesson]="39"
+        [purpose]="'Build a simple table that takes a list of objects and outputs the values.'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '*ngIF', '*ngFor', 'keyvalue pipe']">
+        <app-simple-table body></app-simple-table>
+    </app-card>
+
+    <app-card [title]="'Counter Input'"
+        [lesson]="38"
+        [purpose]="'Build a counter input component. Have it take in a min and max value. Default min to 0 and max to the max safe number.'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '(click)', 'Number.MAX_SAFE_INTEGER', 'ngModel']">
+        <app-counter-input body></app-counter-input>
+    </app-card>
+
+
+    <app-card [title]="'Search List'"
+        [lesson]="37"
+        [purpose]="'Build a search list component that displays a list of possible strings that matches.'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '*ngFor', '*ngIf', 'Debounce Search Component','Filter Term Pipe']">
+        <app-search-list body
+            [items]="['United States', 'Mexico', 'United Arab Emirates', 'Belgium', 'Netherlands', 'France']"></app-search-list>
+    </app-card>
+
+    <app-card [lesson]="36"
+        [purpose]="'Build a debounce search input that notifies the parent of its value updating every 250ms'"
+        [title]="'Debounce Search'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()', '@Output()', 'ngModel', 'Subject', 'ngModelChange']">
+        <app-debounce-search body
+            (searchUpdate)="debounceExampleMethod($event)"></app-debounce-search>
+    </app-card>
+
+    <app-card [lesson]="35"
+        [purpose]="'Create a rich text output component that strips out the html when it is invalid or empty'"
+        [title]="'Rich Text Viewer'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', '@Input', 'set']">
+        <div class=""
+            body>
+            <div class="">
+                <h3>Good example</h3>
+                <app-rich-text-viewer [htmlText]="'<p>Hello World</p>'"></app-rich-text-viewer>
+            </div>
+            <div class="">
+                <h3>Empty example</h3>
+                <app-rich-text-viewer [htmlText]="''"></app-rich-text-viewer>
+            </div>
+            <div class="">
+                <h3>Bad HTML example</h3>
+                <app-rich-text-viewer [htmlText]="'<p>Hello World'"></app-rich-text-viewer>
+            </div>
+        </div>
+    </app-card>
+
+    <app-card [lesson]="33"
+        [purpose]="'Build a toggle component that takes in a value and has a smooth transition when changing'"
+        [title]="'toggle'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input()']">
+        <app-toggle [isOn]="toggleValue"
+            body></app-toggle>
+    </app-card>
+
+    <app-card [title]="'Quote'"
+        [lesson]="32"
+        [purpose]="'Build a quote component that takes in a quote, author and occupation'"
+        [subTitle]="'Components'"
+        [topics]="['@Component()', '@Input']">
+        <app-quote body
+            [quote]="'Get Good, Get Great, Get Better'"
+            [author]="'Dylan C. Israel'"
+            [occupation]="'Software engeneer, Mentor & Educator'"></app-quote>
+
+    </app-card>
+
+    <app-card [title]="'Twitter Post'"
+        [subTitle]="'Component'"
+        [topics]="['@Component()', '@Input', 'TitleService', 'encodeURI()']">
+        <app-twitter-post body></app-twitter-post>
+    </app-card>
+
+    <app-card [title]="'Credit Card Input'"
+        [lesson]="25"
+        [purpose]="'Create a credit card input that when in readonly mode x out everything but last 4 digits, displays an icon for amex, visa, masterdcard of discover. If no match fall back to a generic card'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', '@Input', 'ng-container', 'ng-switch', 'ngSwitchCase', 'ngSwitchDefault', 'ngModel']">
+        <div class=""
+            body>
+            <app-credit-card-input [creditCardNumber]="'3324432143214321'"
+                [isReadonly]="false"></app-credit-card-input>
+            <app-credit-card-input [creditCardNumber]="'4321432143214321'"
+                [isReadonly]="true"></app-credit-card-input>
+            <app-credit-card-input [creditCardNumber]="'5321432143214321'"
+                [isReadonly]="true"></app-credit-card-input>
+            <app-credit-card-input [creditCardNumber]="'6321432143214321'"
+                [isReadonly]="true"></app-credit-card-input>
+        </div>
+        <div class=""
+            content></div>
+    </app-card>
+
+    <app-card [title]="'Loader'"
+        [lesson]="23"
+        [purpose]="'Create a circular loader component that can be turned on and off. Has an overlay with a blur effect'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', '@Input', 'Enum', 'ngSwitch / ngSwitchCase']">
+        <app-loader body
+            [isLoading]="false"
+            [loaderType]="loaderType"></app-loader>
+    </app-card>
+
+    <app-card [title]="'Star Ratings'"
+        [lesson]="17"
+        [purpose]="'Build a star ratings component that takes in a rating and renders out the correct amount of stars up to 5 including half stars and empty stars'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', '@Input','*ngFor','*ngIf']">
+        <app-star-ratings body
+            [rating]="4.5"></app-star-ratings>
+    </app-card>
+
+    <app-card [title]="'Progress Bar'"
+        [lesson]="16"
+        [purpose]="'Build a progress bar component tthat takes in a value an defaults to a max of 100. Add animation when th value icreases or dercreases'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', '@Input']">
+        <app-progress-bar body
+            [value]="progressValue"></app-progress-bar>
+        <button footer
+            (click)="progressValue = 75;">Update</button>
+    </app-card>
+
+    <app-card [title]="'Accordion'"
+        [lesson]="15"
+        [purpose]="'Build a basic accordion component that takes in a list of accordion content. Accordion content will include a title, content(string only) and something to control if the accordion is opened or closed' "
+        [subTitle]="'Components'"
+        [topics]="['component','*ngFor', '@Input', 'dynamic class binding', '(click)', 'interface']">
+        <app-accordion body
+            [items]="accordionItems"></app-accordion>
+    </app-card>
+
+    <app-card [iconClasses]="'fas fa-info-circle'"
+        [title]="'Card'"
+        [subTitle]="'Components'"
+        [topics]="['Component', 'ng-content', '@Input', 'dynamic class binding', '*ngIf']">
+        <p body>Body Content</p>
+        <p footer>Footer Content</p>
+    </app-card>
+
+    <!-- <app-card [title]="'Top of Page'"
+        [subTitle]="'Components'"
+        [topics]="['@Component', 'ViewportScroller', '@Hostlistener', 'class bindings']">
+        <app-top-of-page body></app-top-of-page>
+    </app-card> -->
+</main>

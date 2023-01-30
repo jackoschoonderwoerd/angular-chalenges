@@ -1,0 +1,6 @@
+<div class="shown">{{isShown}}</div>
+<button [class.is-shown]="isShown"
+    (click)="goToTop()">
+    <mat-icon [class.is-shown]="isShown"
+        style="font-family: 'Material Icons';">expand_less</mat-icon>
+</button>

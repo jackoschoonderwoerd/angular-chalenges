@@ -1,0 +1,60 @@
+<h1>Directives</h1>
+<hr>
+
+
+
+<app-card [title]="'copy'"
+    [lesson]="56"
+    [subTitle]="'Directive'"
+    [topics]="['@Directive()', '@Input()', '@Inject()', '@HostListener', 'navigator', 'document', 'SnackbarService' ]"
+    [purpose]="' Create a directive that copies the text provided and notifies the user it was copied using the SnacbarService'">
+    <button body
+        appCopy="Directive Copy Example"
+        style="border: 1px solid black; text-align: center; padding: 10px">Copy</button>
+</app-card>
+
+<app-card [title]="'Scale'"
+    [lesson]="51"
+    [subTitle]="'Directives'"
+    [topics]="['@Directive()', 'ElementRef', '@HostListener']"
+    [purpose]="'Build a scale directive that scales an element to 1.25 x its size'">
+    <div class=""
+        body
+        appScale
+        style="width: 100px; height: 100px; background-color: #007acc; margin-left: auto; margin-right: auto"></div>
+</app-card>
+
+<app-card [title]="'Riple'"
+    [lesson]="42"
+    [subTitle]="'Directives'"
+    [topics]="['@Directive()', '@Input','ElementRef', 'Renderer2', '@Hostlistener']"
+    [purpose]="'Build a ripple directive that on hover changes color and on click ripples across the element'">
+    <div class=""
+        body><button appRipple="ripple"
+            style="border: 1px solid black; text-align: center; padding: 10px;">Ripple Button</button></div>
+</app-card>
+
+<app-card [lesson]="31"
+    [purpose]="'Create a directive that debounces a lick event for up to 500ms'"
+    [title]="'Debounce Click'"
+    [subTitle]="'Directives'"
+    [topics]="['@Directive()', '@Output()', 'ngOnInit()', 'ngOnDestroy()', '@HostListener']">
+    <div class=""
+        body>
+        <button appDebounceClick
+            (debounceClick)="log()">Log</button>
+    </div>
+</app-card>
+
+<app-card [title]="'Lazy Load Image'"
+    [lesson]="57"
+    [subTitle]="'Directive'"
+    [topics]="['@Directive()', '@Input', '@HostBinding()', 'IntersectionObserver', 'ngAfterViewInit', 'ngOnDestroy', 'ElementRef', '@Injection()']"
+    [purpose]="'Create a lazy load image directive that only loads an image if it is in view'">
+    <div body>
+        <img appLazyLoadImage
+            width="500px"
+            src="https://images.unsplash.com/photo-1674976645516-7b20134fdeb3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"
+            alt="">
+    </div>
+</app-card>

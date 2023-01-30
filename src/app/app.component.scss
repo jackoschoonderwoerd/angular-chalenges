@@ -1,0 +1,12 @@
+app-toolbar {
+    ul {
+        li {
+        }
+    }
+}
+main {
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 1rem;
+}

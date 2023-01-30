@@ -1,0 +1,49 @@
+<app-card [title]="'Slide Right'"
+    [lesson]="59"
+    [subTitle]="'other'">
+    <app-tab body
+        [tabs]="tabs"
+        (selectedTabIndex)="selectedTab = $event;">
+        <h1 @slideRightAnimation
+            *ngIf="selectedTab === 0">Tab 1 example</h1>
+        <h1 @slideRightAnimation
+            *ngIf="selectedTab === 1">Tab 2 example</h1>
+    </app-tab>
+</app-card>
+
+
+<app-card [title]="'Form Dirty Card'"
+    [lesson]="46"
+    [subTitle]="'other'"
+    [topics]="['@Injectable()', 'CanDeactivate']"
+    [purpose]="'Build a reactive form guard to ask a user if they wanted to proceed with the move it the form is dirty'">
+    <div body
+        class="form-container">
+        <form [formGroup]="form"
+            (ngSubmit)="onSubmit()">
+            <input type="text"
+                formControlName="name"
+                placeholder="name">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</app-card>
+
+<app-card [title]="'Fade in out Animation'"
+    [lesson]="43"
+    [subTitle]="'Other'"
+    [topics]="['trigger()', 'transition()', 'style()', 'animate()']"
+    [purpose]="'Build a fade in out animation that fades an element in when it enters the DOM and out when it exits the DOM'">
+    <div class=""
+        body>
+        <h2 *ngIf="isInDOM"
+            [@fadeInOutAnimation]>Hello</h2>
+        <h2 *ngIf="!isInDOM"
+            [@fadeInOutAnimation]>World</h2>
+    </div>
+    <div class=""
+        footer>
+        <button (click)="isInDOM != isInDOM"
+            (click)="toggle()">Toggle Animation</button>
+    </div>
+</app-card>

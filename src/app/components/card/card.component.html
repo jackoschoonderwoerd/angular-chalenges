@@ -1,0 +1,29 @@
+<div class="card-container">
+    <div class="header">
+        <div class="top-header">
+            <div class="lesson">{{lesson ? lesson : 'NA'}}</div>
+            <div class="title">{{title}}</div>
+            <div class="subtitle">{{subTitle}}</div>
+        </div>
+        <div class="bottom-header">
+            <ul class="topics">
+                <li *ngFor="let topic of topics">{{topic}}</li>
+            </ul>
+            <!-- <div class="lesson">
+                    <ng-content select="[lesson]"></ng-content>
+                </div> -->
+
+            <div class="purpose">
+                <p>{{purpose}}</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="body">
+        <ng-content select="[body]"></ng-content>
+    </div>
+
+    <div class="footer">
+        <ng-content select="[footer]"></ng-content>
+    </div>
+</div>

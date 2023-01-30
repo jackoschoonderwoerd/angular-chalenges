@@ -1,0 +1,31 @@
+<div class="credit-card-container">
+    <div class="input-container">
+        <ng-container [ngSwitch]="creditCardNumber[0]">
+            <div class=""
+                *ngSwitchCase="'3'">
+                <mat-icon>credit_card</mat-icon>american express
+            </div>
+            <div class=""
+                *ngSwitchCase="'4'">
+                <mat-icon>credit_card</mat-icon>visa
+            </div>
+            <div class=""
+                *ngSwitchCase="'5'">
+                <mat-icon>credit_card</mat-icon>mastercard
+            </div>
+            <div class=""
+                *ngSwitchCase="'6'">
+                <mat-icon>credit_card</mat-icon>discover
+            </div>
+            <div class=""
+                *ngSwitchDefault>
+                <mat-icon>credit_card</mat-icon>any credit card
+            </div>
+        </ng-container>
+        <input type="text"
+            [(ngModel)]="creditCardNumber"
+            required
+            maxlength="16"
+            [readOnly]="isReadonly">
+    </div>
+</div>

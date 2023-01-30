@@ -1,0 +1,21 @@
+<div class="accordion-container">
+
+    <div class="item"
+        *ngFor="let item of items">
+        <div class="header">
+            <h4>{{item.title}}</h4>
+            <mat-icon style="font-family: 'Material Icons'"
+                [class.is-expanded]="item.isExpanded"
+                (click)="toggle(item)">
+                expand_less
+            </mat-icon>
+
+        </div>
+        <div class="content"
+            [class.is-expanded]="item.isExpanded">
+            <p>
+                {{item.content}}
+            </p>
+        </div>
+    </div>
+</div>

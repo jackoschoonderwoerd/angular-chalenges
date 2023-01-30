@@ -1,0 +1,24 @@
+<app-card [title]="'Snackbar'"
+    [lesson]="55"
+    [subTitle]="'Service'"
+    [topics]="['@Injectable()', 'provideIn', 'Subject', 'next()']"
+    [purpose]="'Build a singleton service to call the snackbar form any gage with a single instance of app-snackbar'">
+    <div class=""
+        body>
+        <button (click)="callSnackbar()">Call Snackbar</button>
+    </div>
+</app-card>
+
+<app-card [title]="'User'"
+    [lesson]="47"
+    [subTitle]="'Service'"
+    [topics]="['@Injectable', 'HttpClient', 'get()', 'pipe()', 'map()', 'subscribe()', 'json pipe']"
+    [purpose]="'Build a GET call to get a user by id from https://jsonplaceholder.typeicode.com/users. Map the user data from the service out. When successful set a user property in the class and put it on the screen with json pipe, on failure log the failure and when complete log you are done'">
+    <div class=""
+        body>
+        <p *ngIf="user">{{user|json}}</p>
+        <p *ngIf="user$|async">{{user$|async|json}}</p>
+        <p *ngIf="error">ERROR: {{error|json}}</p>
+        <p *ngIf="completed">COMPLETED: {{completed}}</p>
+    </div>
+</app-card>
