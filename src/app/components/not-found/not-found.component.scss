@@ -1,0 +1,19 @@
+@import "./../../../styles.scss";
+
+.not-found-container {
+    display: grid;
+    gap: 20px;
+    text-align: center;
+    height: 75vh;
+    align-content: center;
+    h1 {
+        color: $blue;
+        text-transform: uppercase;
+    }
+    mat-icon {
+        // border: 1px solid red;
+        color: blue;
+        font-size: 1rem;
+        margin: auto;
+    }
+}

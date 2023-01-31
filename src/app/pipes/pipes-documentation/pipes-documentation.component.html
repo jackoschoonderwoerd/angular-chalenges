@@ -1,4 +1,39 @@
 <main>
+    <app-card [title]="'Sort By Key'"
+        [subTitle]="'Pipes'"
+        [topics]="['@Pipe()', 'PipeTransform']"
+        [lesson]="71"
+        [purpose]="'Create a pipe that sorts an object array. Pass in a directio for the sort as well. If a value is not defined simply return abd ud a value is not an array throw an error'">
+        <div body>
+            <h5>String ascending</h5>
+            <p *ngFor="let obj of objectArray | sortByKey: 'content'">{{obj.content}}</p>
+            <h5>String descending</h5>
+            <p *ngFor="let obj of objectArray | sortByKey: 'content': false">{{obj.content}}</p>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Sort By'"
+        [subTitle]="'Pipes'"
+        [topics]="['@Pipe()', 'PipeTransform']"
+        [lesson]="70"
+        [purpose]="'Create a pipe that sorts a string array. Pass in a direction for the sort as well. If a value is not defined simply return it and if a value is not an array throw an error' ">
+        <div body>
+            <h5>String ascending</h5>
+            <p>{{stringArray|sortBy}}</p>
+            <h5>String descending</h5>
+            <p>{{stringArray|sortBy:false}}</p>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Rich Text'"
+        [subTitle]="'Pipes'"
+        [lesson]="69"
+        [topics]="['@Pipe()', 'Pipe Transform']"
+        [purpose]="'Create a rich text output component that strips out the html when it is ivalid or empty'">
+        <div body>
+            <div [innerHtml]="html|richText"></div>
+        </div>
+    </app-card>
 
     <app-card [lesson]="31"
         [purpose]="'Build a pipe that takes in an array of strings and filters it by a string'"
@@ -14,14 +49,16 @@
     <app-card [lesson]="22"
         [purpose]="'Build a pipe that truncates text that is longer than 100 characters by default, but is configurable. If it is longer than the maximum length append ...'"
         [title]="'Trucate'"
-        [subTitle]="'Pipes'">
+        [subTitle]="'Pipes'"
+        [topics]="['@Pipe()', 'PipeTransform']">
         <p body>{{'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi consequatur odio impedit sequi? Laborum molestiae corrupti rem incidunt expedita rerum iure, atque saepe modi nam, qui eos reiciendis quod in ut sunt doloribus eligendi molestias aut voluptas amet? Dolores labore, tenetur corporis illo quisquam odit quas officia reprehenderit cum consequatur quam sit corrupti nostrum qui facere temporibus! Distinctio est officiis amet quisquam harum iste delectus! Eum reprehenderit sequi soluta veniam enim recusandae temporibus nihil aut, architecto impedit omnis, minima quae tenetur similique, animi delectus? Dolore qui deserunt possimus eligendi ipsum rerum voluptatibus quasi atque alias, culpa neque sequi cupiditate? Eveniet libero velit consectetur. Porro, autem asperiores excepturi maiores dolorum rerum totam in quam quia laudantium corrupti exercitationem necessitatibus! Tempora inventore quidem dignissimos aperiam alias nulla animi totam fugiat voluptate ipsum recusandae, adipisci harum velit cumque iusto veniam, dolor incidunt asperiores vitae soluta dolorum cum ratione itaque! Laboriosam eius dolorem tenetur.' | truncate : 50}}</p>
     </app-card>
 
     <app-card [lesson]="24"
         [purpose]="'Build a pipe that takes in a credit card number stored as a string suc ass \'1111222233334444\'. If in the correct form return is dashed. If in the incorrect form, return an error for invalid length of an error for invalid charactersz'"
         [title]="'Credit Card Formatter'"
-        [subTitle]="'Pipes'">
+        [subTitle]="'Pipes'"
+        [topics]="['@Pipe()', 'PipeTransform']">
         <div class=""
             body>
             <p>{{'1111222233334444'|creditCardFormatter}}</p>

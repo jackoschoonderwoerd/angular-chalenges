@@ -1,9 +1,53 @@
 <main>
+
+    <app-card [title]="'Password'"
+        [lesson]="67"
+        [subTitle]="'Component'"
+        [topics]="['@Component()', 'get/set', 'ngModel', 'templateRef']"
+        [purpose]="'Build a password component with a progress bar for how the password is validating. Required min length of 8, one or more capital letters, and one or more special characters'">
+        <app-password body>
+            <div></div>
+        </app-password>
+    </app-card>
+
+    <app-card [title]="'Not Found'"
+        [subTitle]="'Component'"
+        [lesson]="66"
+        [topics]="['@Component', 'Router', 'get', 'Wildcard Route']"
+        [purpose]="'Build a 404 Not Found Component thet redirects to the home page after 10 seconds'">
+        <div body>
+            <a routerLink="404">Go to unkwnow page</a>
+        </div>
+    </app-card>
+
+    <app-card [title]="'Pill Filter List'"
+        [subTitle]="'Component'"
+        [topics]="['@Component()', '@Input()', 'app-pill', 'set/get', '@Output', '*ngFor', '*ngIf']"
+        [purpose]="'Build a filters component that takes in an array of labels. When clicked notifies parent of selected filters'"
+        [lesson]="65">
+        <div body>
+            <app-pill-filter-list [pills]="['CA', 'FL', 'IN', 'OR', 'WA']"></app-pill-filter-list>
+        </div>
+    </app-card>
+
     <app-card [title]="'Pill'"
         [subTitle]="'Component'"
         [lesson]="64"
         [purpose]="'Build a pill component that takes in a label an optional icon and a style type.'"
-        [topics]="['@Component90', '@Input()', 'enum', 'ngClass', '*ngIf']">
+        [topics]="['@Component()', '@Input()', 'enum', 'ngClass', '*ngIf']">
+        <div body>
+            <app-pill [type]="PillType.Error"
+                [iconClasses]="'fas fa-tag'"
+                [label]="'Error'"></app-pill>
+            <app-pill [type]="PillType.Info"
+                [iconClasses]="'fas fa-tag'"
+                [label]="'Info'"></app-pill>
+            <app-pill [type]="PillType.Success"
+                [iconClasses]="'fas fa-tag'"
+                [label]="'Success'"></app-pill>
+            <app-pill [type]="PillType.Warning"
+                [label]="'Warning'"></app-pill>
+        </div>
     </app-card>
 
     <app-card [title]="'Fieldset'"

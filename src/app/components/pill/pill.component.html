@@ -1,1 +1,8 @@
-<p>pill works!</p>
+<div [ngClass]="['pill-container', type]"
+    (click)="toggle()">
+    <i *ngIf="iconClasses"
+        [ngClass]="iconClasses"></i>
+    <span>{{label}}</span>
+    <mat-icon *ngIf="isActive && canBeSelected"
+        style="font-family: 'Material Icons';">cancel</mat-icon>
+</div>

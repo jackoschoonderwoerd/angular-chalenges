@@ -7,6 +7,9 @@ import { SharedModule } from '../shared/shared.module';
 import { CreditCardFormatterPipe } from './creditCardFormatter/credit-card-formatter.pipe';
 import { FlattenPipe } from './flatten/flatten.pipe';
 import { FilterTermPipe } from './filter-term/filter-term.pipe';
+import { RichTextPipe } from './rich-text/rich-text.pipe';
+import { SortByPipe } from './sort-by/sort-by.pipe';
+import { SortByKeyPipe } from './sort-by-key/sort-by-key.pipe';
 
 
 
@@ -20,6 +23,9 @@ import { FilterTermPipe } from './filter-term/filter-term.pipe';
         CreditCardFormatterPipe,
         FlattenPipe,
         FilterTermPipe,
+        RichTextPipe,
+        SortByPipe,
+        SortByKeyPipe,
     ],
     imports: [
         CommonModule,

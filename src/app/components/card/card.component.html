@@ -5,19 +5,19 @@
             <div class="title">{{title}}</div>
             <div class="subtitle">{{subTitle}}</div>
         </div>
-        <div class="bottom-header">
-            <ul class="topics">
-                <li *ngFor="let topic of topics">{{topic}}</li>
-            </ul>
-            <!-- <div class="lesson">
+        <!-- <div class="bottom-header"> -->
+        <ul class="topics">
+            <li *ngFor="let topic of topics">{{topic}}</li>
+        </ul>
+        <div class="purpose">
+            <p>{{purpose}}</p>
+        </div>
+        <!-- <div class="lesson">
                     <ng-content select="[lesson]"></ng-content>
                 </div> -->
 
-            <div class="purpose">
-                <p>{{purpose}}</p>
-            </div>
 
-        </div>
+        <!-- </div> -->
     </div>
     <div class="body">
         <ng-content select="[body]"></ng-content>

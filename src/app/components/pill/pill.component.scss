@@ -1,0 +1,32 @@
+@import "./../../../styles";
+
+.pill-container {
+    position: relative;
+    padding: 5px 15px;
+    border-radius: 16px;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+    display: inline;
+    align-items: center;
+
+    mat-icon {
+        position: relative;
+        top: 5px;
+        margin-left: 0.5rem;
+        // border: 2px solid red;
+    }
+
+    &.error {
+        background-color: $red;
+    }
+    &.info {
+        background-color: $blue;
+    }
+    &.success {
+        background-color: $green;
+    }
+    &.warning {
+        background-color: $orange;
+    }
+}
