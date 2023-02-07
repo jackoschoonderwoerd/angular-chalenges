@@ -1,7 +1,25 @@
 <h1>Directives</h1>
 <hr>
 
+<app-card [title]="'Auto Focus Input'"
+    [subTitle]="'Directive'"
+    [lesson]="77"
+    [purpose]="'Create a directive that will focus an input'"
+    [topics]="['@Directive()', 'ElementRef', 'ngAfterContentInit']">
+    <div body>
+        <app-modal #modal>
+            <div *ngIf="!modal.isHidden">
+                <input type="text"
+                    appAutoFocusInput>
+            </div>
+        </app-modal>
 
+    </div>
+    <div footer
+        class="footer">
+        <button (click)="modal.open()">Call modal</button>
+    </div>
+</app-card>
 
 <app-card [title]="'copy'"
     [lesson]="56"

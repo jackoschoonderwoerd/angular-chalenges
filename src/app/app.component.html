@@ -1,15 +1,22 @@
 <app-toolbar [title]="'100 Angular Chalenge'">
     <ul>
-        <li routerLink="components">Components</li>
-        <li routerLink="directives">Directives</li>
-        <li routerLink="services">Services</li>
-        <li routerLink="pipes">Pipes</li>
-        <li routerLink="other">Other</li>
+        <li routerLink="components"
+            routerLinkActive="active"
+            routerLinkActiveOptions="{exact:true}">Components</li>
+        <li routerLink="directives"
+            routerLinkActive="active">Directives</li>
+        <li routerLink="services"
+            routerLinkActive="active">Services</li>
+        <li routerLink="pipes"
+            routerLinkActive="active">Pipes</li>
+        <li routerLink="other"
+            routerLinkActive="active">Other</li>
     </ul>
 </app-toolbar>
 <main>
     <router-outlet></router-outlet>
 
+    <span class="content">{{title}}</span>
 
 </main>
 <app-card [title]="'Top of Page'"

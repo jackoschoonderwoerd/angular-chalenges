@@ -1,3 +1,39 @@
+<app-card [title]="'Param example'"
+    [subTitle]="'Service'"
+    [lesson]="74"
+    [topics]="['ActivatedRoute', 'pipe()', 'map()', 'mergeMap()', 'ngOnInit']"
+    [purpose]="'Add a secondary route that grabs a route param id and uses it to do a user id call on page load. IMPLEMENTED IN SERVICES.ROUTING.TS & SERVICES-DOCUMENTATION.COMPONENT.TS'">
+    <div body>
+        {{userIdExample|json}}
+    </div>
+    <div footer>
+        <button routerLink="/services/3">Go to Route ID 3</button>
+    </div>
+</app-card>
+
+<app-card [title]="'Local Storage'"
+    [subTitle]="'Service'"
+    [lesson]="73"
+    [topics]="['@Injectable()', '@Inject()', 'BehaviorSubject']"
+    [purpose]="'Build a local storage service that manages the stat if your application. Make it so it can only be modified by a method call.'">
+    <div body>
+        {{state|json}}
+    </div>
+    <div footer>
+        <div class="form"
+            [formGroup]="localStorageform">
+            <input type="text"
+                formControlName="key"
+                placeholder="Add key">
+            <input type="text"
+                formControlName="value"
+                placeholder="Add value">
+        </div>
+        <button [disabled]="localStorageform.invalid"
+            (click)="updateState()">Update State</button>
+    </div>
+</app-card>
+
 <app-card [title]="'title'"
     [lesson]="68"
     [topics]="['@Injectable()','Router Data Properties', 'Title', 'Router','ActivatedRoute','NavigationEnd', 'ngOnInit()', 'filter']"

@@ -20,9 +20,9 @@ export class RichTextViewerComponent {
     }
 
 
-    private parseNonEmptyHtml(html: string = '') {
+    private parseNonEmptyHtml(html = '') {
         // console.log(html)
-        const htmlTags: RegExp = /<[^]*?>/g;
+        const htmlTags = /<[^]*?>/g;
         const hasContent = html.replace(htmlTags, '').trim().length > 0;
 
         return hasContent ? html : '';

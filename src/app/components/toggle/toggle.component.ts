@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./toggle.component.scss']
 })
 export class ToggleComponent {
-    @Input() isOn: boolean = false;
+    @Input() isOn = false;
 
     public toggle() {
         this.isOn = !this.isOn

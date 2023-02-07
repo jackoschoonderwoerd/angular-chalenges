@@ -1,13 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 import { CardComponent } from '../components/card/card.component';
+import { CommonModule } from '@angular/common';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { SharedMaterialModule } from './shared-material.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SnackbarComponent } from '../components/snackbar/snackbar.component';
 import { TabComponent } from '../components/tab/tab.component';
-
+import { ModalComponent } from '../components/modal/modal.component';
 
 
 
@@ -16,21 +14,24 @@ import { TabComponent } from '../components/tab/tab.component';
     declarations: [
         CardComponent,
         SnackbarComponent,
-        TabComponent
+        TabComponent,
+        ModalComponent
     ],
     exports: [
         SnackbarComponent,
         CardComponent,
-        TabComponent
+        TabComponent,
+        ModalComponent
     ],
     imports: [
         CommonModule,
         SharedMaterialModule,
-        // BrowserAnimationsModule,
-        // FormsModule,
-        // ReactiveFormsModule
 
 
+    ],
+    schemas: [
+        CUSTOM_ELEMENTS_SCHEMA,
+        NO_ERRORS_SCHEMA
     ],
 })
 export class SharedModule { }

@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./quote.component.scss']
 })
 export class QuoteComponent {
-    @Input() public quote: string = '';
-    @Input() public author: string = '';
-    @Input() public occupation: string = '';
+    @Input() public quote = '';
+    @Input() public author = '';
+    @Input() public occupation = '';
 }

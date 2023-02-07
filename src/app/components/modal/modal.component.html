@@ -1,0 +1,17 @@
+<div class="modal-container"
+    [class.isHidden]="isHidden">
+    <!-- whatever is neseted in app-modal -->
+    <div class="modal-header">
+        <h5>{{title}}</h5>
+        <mat-icon style="font-family: 'Material Icons';"
+            (click)="close()">close</mat-icon>
+    </div>
+    <div class="modal-body">
+        <ng-content></ng-content>
+    </div>
+</div>
+<div class="modal-overlay"
+    (click)="close()"
+    [class.isHidden]="isHidden">
+
+</div>

@@ -1,5 +1,5 @@
 import { Directive, ElementRef, HostListener } from '@angular/core';
-import { style } from '@angular/animations';
+
 
 @Directive({
     selector: '[appScale]'

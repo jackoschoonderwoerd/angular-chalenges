@@ -17,6 +17,9 @@ import { PillType } from '../pill/pill-type.enum';
 })
 export class ComponentDocumentationComponent {
 
+    // 72 Overlay
+    public isShownOverlay: boolean
+
     // 64 Pill Component
     public PillType = PillType;
 
@@ -61,7 +64,7 @@ export class ComponentDocumentationComponent {
 
     public toggleValue = false;
 
-    public progressValue: number = 25;
+    public progressValue = 25;
 
     public loaderType = LoaderType.Loading;
 
@@ -78,7 +81,7 @@ export class ComponentDocumentationComponent {
         }
     ]
     // skeleton loader:
-    public loaded: boolean = false;
+    public loaded = false;
 
 
     public buttonToggleOptions: ButtonMeta[] = [

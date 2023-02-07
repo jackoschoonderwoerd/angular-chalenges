@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./skeleton-loader.component.scss']
 })
 export class SkeletonLoaderComponent {
-    @Input() public width: string = '100%';
-    @Input() public height: string = '100%';
+    @Input() public width = '100%';
+    @Input() public height = '100%';
 
     public get dimensions() {
         return {

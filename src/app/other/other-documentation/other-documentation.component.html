@@ -1,3 +1,50 @@
+<app-card [title]="'Active route ui'"
+    [lesson]="76"
+    [topics]="['routerLinkActive', 'routerLinkActiveOptions']"
+    [purpose]="'Udate the app routes to had a class for the current route.'">
+    <div body>
+        <p>routerLinkActive="active"</p>
+        <p>create css class .active</p>
+        <p>exact:true</p>
+
+
+    </div>
+</app-card>
+
+
+<app-card [title]="'Common scripts'"
+    [lesson]="75"
+    [topics]="['https://angular/io/cli', 'rimraf']"
+    [purpose]="'Create 3 scripts. One for test coverage, one for cleaning the projects of coverage and dist, and three to auto fix any lint issues'">
+    <div body>
+        <ul style="list-style: none;">
+            <li style="text-transform: uppercase; font-weight: bolder;">--code-coverage</li>
+            <li>package.json:</li>
+            <li>cli: ng test --code-coverage</li>
+            <li style="color: red;">(NOT WORKING)</li>
+        </ul>
+        <hr>
+        <ul style="list-style: none;">
+            <li style="text-transform: uppercase; font-weight: bolder;">rimraf</li>
+            <li>package.json</li>
+            <li>scripts: "clean":"rimraf dist && rimraf coverage"</li>
+            <li>removes dist & coverage</li>
+        </ul>
+        <hr>
+        <ul style="list-style: none;">
+            <li style="text-transform: uppercase; font-weight: bolder;">tslint</li>
+            <li>package.json: "lint:fix":"ng lint --fix"</li>
+            <li>if nessecary install tslint</li>
+            <li>vscode => settings</li>
+            <li>search: "onsave"</li>
+            <li>"editor.codeActionsOnSave"</li>
+            <li>"source.fixAll.tslint: false"</li>
+            <li>cli: ng lint --fix</li>
+        </ul>
+
+    </div>
+</app-card>
+
 <app-card [title]="'Slide Right'"
     [lesson]="59"
     [subTitle]="'other'">
@@ -43,7 +90,7 @@
     </div>
     <div class=""
         footer>
-        <button (click)="isInDOM != isInDOM"
+        <button (click)="isInDOM !== isInDOM"
             (click)="toggle()">Toggle Animation</button>
     </div>
 </app-card>

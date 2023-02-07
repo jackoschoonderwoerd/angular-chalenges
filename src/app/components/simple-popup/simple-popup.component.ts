@@ -10,7 +10,7 @@ import { delay } from 'rxjs/operators';
     animations: [fadeInOutAnimation]
 })
 export class SimplePopupComponent {
-    @Input() public message: string = '';
+    @Input() public message = '';
 
     public isShown = false;
 

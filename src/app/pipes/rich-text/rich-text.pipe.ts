@@ -12,7 +12,7 @@ export class RichTextPipe implements PipeTransform {
         return isValidHtml ? html : 'non valid html, (check public html-string in pipes-documentation.component.ts, is missing "<")';
     }
     private parseNonEmptyHtml(html: string) {
-        const htmlTags: RegExp = /<[^]*?>/g;
+        const htmlTags = /<[^]*?>/g;
         const hasContent = html.replace(htmlTags, '').trim().length > 0;
         return hasContent ? html : ''
     }

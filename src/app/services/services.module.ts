@@ -6,6 +6,8 @@ import { SharedModule } from '../shared/shared.module';
 import { ServicesDocumentationComponent } from './services-documentation/services-documentation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user-service/user.service';
+import { LocalStorageService } from './local-storage/local-storage.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +19,13 @@ import { UserService } from './user-service/user.service';
         HttpClientModule,
         SharedModule,
         ServicesRoutingModule,
+        FormsModule,
+        ReactiveFormsModule
     ],
-    providers: [UserService]
+    providers: [
+        UserService,
+        LocalStorageService,
+        { provide: 'LocalStorage', useValue: window.localStorage }
+    ]
 })
 export class ServicesModule { }

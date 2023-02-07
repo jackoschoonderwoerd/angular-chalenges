@@ -9,8 +9,8 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
     styleUrls: ['./snackbar.component.scss']
 })
 export class SnackbarComponent implements OnInit {
-    @Input() public message: string = '';
-    public isShown: boolean = false;
+    @Input() public message = '';
+    public isShown = false;
 
     constructor(public snackbarService: SnackbarService) { }
 

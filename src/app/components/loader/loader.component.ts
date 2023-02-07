@@ -9,7 +9,7 @@ import { LoaderType } from './models/loader-type.enum';
 export class LoaderComponent implements OnInit {
 
 
-    @Input() public isLoading: boolean = false;
+    @Input() public isLoading = false;
     @Input() public loaderType: LoaderType = LoaderType.Circular;
     private loading = 'Loading';
     private loadingPeriods = '.\0\0';

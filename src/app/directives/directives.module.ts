@@ -9,6 +9,7 @@ import { RippleDirective } from './ripple/ripple.directive';
 import { ScaleDirective } from './scale/scale.directive';
 import { CopyDirective } from './copy/copy.directive';
 import { LazyLoadImageDirective } from './lazy-load-image/lazy-load-image.directive';
+import { AutoFocusInputDirective } from './auto-focus-input/auto-focus-input.directive';
 
 
 @NgModule({
@@ -18,7 +19,9 @@ import { LazyLoadImageDirective } from './lazy-load-image/lazy-load-image.direct
         RippleDirective,
         ScaleDirective,
         CopyDirective,
-        LazyLoadImageDirective
+        LazyLoadImageDirective,
+        AutoFocusInputDirective,
+
     ],
     imports: [
         CommonModule,

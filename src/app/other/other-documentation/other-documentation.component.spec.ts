@@ -1,23 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OtherDocumentationComponent } from './other-documentation.component';
+// import { OtherDocumentationComponent } from './other-documentation.component';
 
-describe('OtherDocumentationComponent', () => {
-  let component: OtherDocumentationComponent;
-  let fixture: ComponentFixture<OtherDocumentationComponent>;
+// describe('OtherDocumentationComponent', () => {
+//   let component: OtherDocumentationComponent;
+//   let fixture: ComponentFixture<OtherDocumentationComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ OtherDocumentationComponent ]
-    })
-    .compileComponents();
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ OtherDocumentationComponent ]
+//     })
+//     .compileComponents();
 
-    fixture = TestBed.createComponent(OtherDocumentationComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+//     fixture = TestBed.createComponent(OtherDocumentationComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

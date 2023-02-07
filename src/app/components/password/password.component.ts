@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class PasswordComponent {
 
+
+
     public passwordStrengthPercent = 0;
 
     private currentPassword = '';

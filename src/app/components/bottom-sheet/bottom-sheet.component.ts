@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./bottom-sheet.component.scss']
 })
 export class BottomSheetComponent {
-    public isShown: boolean = false;
+    public isShown = false;
 
     public show(): void {
         this.isShown = true;

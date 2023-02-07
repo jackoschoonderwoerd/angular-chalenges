@@ -10,6 +10,6 @@ export class CardComponent {
     @Input() public subTitle = '';
     @Input() public iconClasses = '';
     @Input() public topics: string[] = [];
-    @Input() public purpose: string = ''
-    @Input() public lesson: string = '';
+    @Input() public purpose = ''
+    @Input() public lesson = '';
 }

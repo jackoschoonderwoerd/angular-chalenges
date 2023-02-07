@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccordionItem } from './components/accordion/accordion-item.interface';
+
 import { TitleService } from './services/title/title.service';
 
 @Component({
@@ -15,5 +15,7 @@ export class AppComponent implements OnInit {
         this.titleService.initializeTitleService();
     }
 
-    title = 'angular-chalenges';
+    // title = 'angular-chalenges';
+
+    title = 'angular-chalenges'
 }

@@ -18,14 +18,15 @@ export class CopyDirective {
         try {
             await this.navigator.clipboard.writeText(this.appCopy)
                 .then(() => {
-                    this.snackbarService.callSnackbar('Copied Success')
+                    this.snackbarService.callSnackbar('Copied Success');
                 })
                 .catch((err) => {
-                    this.snackbarService.callSnackbar('Copied Failure')
+                    console.log(err);
+                    this.snackbarService.callSnackbar('Copied Failure');
                 })
 
         } catch {
-            this.snackbarService.callSnackbar('Copied Failed')
+            this.snackbarService.callSnackbar('Copied Failed');
         }
     }
 }

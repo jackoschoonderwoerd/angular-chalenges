@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServicesDocumentationComponent } from './services-documentation/services-documentation.component';
 
 const routes: Routes = [
-    { path: '', component: ServicesDocumentationComponent }
+    { path: '', component: ServicesDocumentationComponent },
+    { path: ':id', component: ServicesDocumentationComponent },
 ];
 
 @NgModule({

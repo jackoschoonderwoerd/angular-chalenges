@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccordionComponent } from './accordion/accordion.component';
 import { BannerCutOutComponent } from './banner-cut-out/banner-cut-out.component';
@@ -18,16 +18,15 @@ import { RichTextViewerComponent } from './rich-text-viewer/rich-text-viewer.com
 import { SearchListComponent } from './search-list/search-list.component';
 import { SimplePopupComponent } from './simple-popup/simple-popup.component';
 import { SimpleTableComponent } from './simple-table/simple-table.component';
-import { SnackbarComponent } from './snackbar/snackbar.component';
+
 import { SortTableComponent } from './sort-table/sort-table.component';
 import { StarRatingsComponent } from './star-ratings/star-ratings.component';
-import { TabComponent } from './tab/tab.component';
+
 import { ToggleComponent } from './toggle/toggle.component';
 import { TwitterPostComponent } from './twitter-post/twitter-post.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComponentsRoutingModule } from './component-routing.module';
-import { TopOfPageComponent } from './top-of-page/top-of-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { ComponentsMaterialModule } from './components-material.module';
 import { SkeletonLoaderComponent } from './skeleton-loader/skeleton-loader.component';
@@ -38,6 +37,8 @@ import { PillComponent } from './pill/pill.component';
 import { PillFilterListComponent } from './pill-filter-list/pill-filter-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PasswordComponent } from './password/password.component';
+import { OverlayComponent } from './overlay/overlay.component';
+
 
 
 
@@ -45,6 +46,7 @@ import { PasswordComponent } from './password/password.component';
     declarations: [
         AccordionComponent,
         BannerCutOutComponent,
+        BottomSheetComponent,
         ButtonToggleComponent,
         ComponentDocumentationComponent,
         CountdownTimerComponent,
@@ -52,8 +54,15 @@ import { PasswordComponent } from './password/password.component';
         CreditCardInputComponent,
         DebounceSearchComponent,
         EmailFormComponent,
+        FieldsetComponent,
+        FooterComponent,
         LoaderComponent,
+        NotFoundComponent,
+        OverlayComponent,
         PagingComponent,
+        PasswordComponent,
+        PillComponent,
+        PillFilterListComponent,
         ProgressBarComponent,
         QuoteComponent,
         RibbonComponent,
@@ -61,22 +70,12 @@ import { PasswordComponent } from './password/password.component';
         SearchListComponent,
         SimplePopupComponent,
         SimpleTableComponent,
-        // SnackbarComponent,
-        SortTableComponent,
-        StarRatingsComponent,
-        // TabComponent,
-        ToggleComponent,
-        // TopOfPageComponent,
-        TwitterPostComponent,
-        FooterComponent,
         SkeletonLoaderComponent,
         SocialMediaBarComponent,
-        BottomSheetComponent,
-        FieldsetComponent,
-        PillComponent,
-        PillFilterListComponent,
-        NotFoundComponent,
-        PasswordComponent,
+        SortTableComponent,
+        StarRatingsComponent,
+        ToggleComponent,
+        TwitterPostComponent,
     ],
     imports: [
         CommonModule,
@@ -85,6 +84,6 @@ import { PasswordComponent } from './password/password.component';
         ReactiveFormsModule,
         ComponentsRoutingModule,
         ComponentsMaterialModule
-    ]
+    ],
 })
 export class ComponentsModule { }

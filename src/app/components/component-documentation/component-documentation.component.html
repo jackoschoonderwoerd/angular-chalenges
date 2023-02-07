@@ -1,5 +1,16 @@
 <main>
 
+    <app-card [title]="'Overlay'"
+        [subTitle]="'Component'"
+        [lesson]="72"
+        [topics]="['@Component()', '@Input()']"
+        [purpose]="'Build an overlay component'">
+        <div body>
+            <app-overlay [isShown]="isShownOverlay"></app-overlay>
+            <button (click)="isShownOverlay = true">Show Overlay</button>
+        </div>
+    </app-card>
+
     <app-card [title]="'Password'"
         [lesson]="67"
         [subTitle]="'Component'"
@@ -348,6 +359,21 @@
         [topics]="['@Component', '@Input','*ngFor','*ngIf']">
         <app-star-ratings body
             [rating]="4.5"></app-star-ratings>
+    </app-card>
+
+    <app-card [title]="'Modal'"
+        [subTitle]="'Component'"
+        [lesson]="17">
+        <div body>
+            <app-modal [title]="'Modal Example'"
+                #modal>
+                <p>app-modal is nested in app-card.</p>
+                <p> This in app-modal nested content will replacce &#60;ng-content&#62; &#60;/ng-content&#62; tags in the modal template</p>
+            </app-modal>
+            <div footer>
+                <button (click)="modal.open()">Call modal</button>
+            </div>
+        </div>
     </app-card>
 
     <app-card [title]="'Progress Bar'"

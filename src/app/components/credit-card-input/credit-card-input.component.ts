@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
     styleUrls: ['./credit-card-input.component.scss']
 })
 export class CreditCardInputComponent {
-    @Input() public creditCardNumber: string = '';
+    @Input() public creditCardNumber = '';
     private readonly = false;
     public get isReadonly() {
         return this.readonly

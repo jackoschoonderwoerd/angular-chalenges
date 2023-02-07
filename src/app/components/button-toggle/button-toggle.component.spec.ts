@@ -1,23 +1,83 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ButtonToggleComponent } from './button-toggle.component';
+import { ButtonMeta } from './button-meta.model';
 
-describe('ButtonToggleComponent', () => {
-  let component: ButtonToggleComponent;
-  let fixture: ComponentFixture<ButtonToggleComponent>;
+describe('Button Toggle Component', () => {
+    it('exists', () => {
+        // assert
+        expect(ButtonToggleComponent).toBeDefined();
+    });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ButtonToggleComponent ]
-    })
-    .compileComponents();
+    describe('General', () => {
+        let component: ButtonToggleComponent;
 
-    fixture = TestBed.createComponent(ButtonToggleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+        beforeEach(() => {
+            component = new ButtonToggleComponent();
+        });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        describe('defaults', () => {
+            it('options is empty', () => {
+                // assert
+                expect(Array.isArray(component.options)).toBe(true);
+                expect(component.options.length).toBe(0);
+            });
+        });
+
+        describe('selected', () => {
+            it('selects the active option', () => {
+                // arrange
+                component.options = [
+                    new ButtonMeta({ title: 'title 1', isActive: true }),
+                    new ButtonMeta({ title: 'title 2' }),
+                    new ButtonMeta({ title: 'title 3' }),
+                ];
+
+                // act
+                component.selected(component.options[1]);
+
+                // assert
+                expect(component.options[0].isActive).toBe(false);
+                expect(component.options[1].isActive).toBe(true);
+            });
+
+            it('notifies parent of button selection', () => {
+                // arrange
+                component.options = [
+                    new ButtonMeta({ title: 'title 1', isActive: true }),
+                    new ButtonMeta({ title: 'title 2' }),
+                    new ButtonMeta({ title: 'title 3' }),
+                ];
+                component.selection.subscribe((value: ButtonMeta) => {
+                    // assert
+                    expect(value).toBe(component.options[2]);
+                });
+
+                // act
+                component.selected(component.options[2]);
+            });
+        });
+    });
 });
+
+// import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+// import { ButtonToggleComponent } from './button-toggle.component';
+
+// describe('ButtonToggleComponent', () => {
+//   let component: ButtonToggleComponent;
+//   let fixture: ComponentFixture<ButtonToggleComponent>;
+
+//   beforeEach(async () => {
+//     await TestBed.configureTestingModule({
+//       declarations: [ ButtonToggleComponent ]
+//     })
+//     .compileComponents();
+
+//     fixture = TestBed.createComponent(ButtonToggleComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
+
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

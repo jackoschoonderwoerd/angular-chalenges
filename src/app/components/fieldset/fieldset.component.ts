@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class FieldsetComponent {
     @Input() legend = '';
-    @Input() isOpen: boolean = false;
+    @Input() isOpen = false;
 
     public toggle(): void {
         this.isOpen = !this.isOpen;

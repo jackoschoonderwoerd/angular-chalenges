@@ -6,7 +6,7 @@ import { SnackbarService } from '../../services/snackbar/snackbar.service';
     templateUrl: './countdown-timer.component.html',
     styleUrls: ['./countdown-timer.component.scss']
 })
-export class CountdownTimerComponent implements AfterViewInit, OnInit {
+export class CountdownTimerComponent  {
 
     private countDownTime: number;
     private timerNumerics;
@@ -27,13 +27,7 @@ export class CountdownTimerComponent implements AfterViewInit, OnInit {
 
     }
 
-    ngOnInit() {
 
-    }
-
-    ngAfterViewInit(): void {
-
-    }
     get days(): string {
         const { milliseconds, minuteInSeconds, minutesInHours, hoursInDay } = this.timerNumerics
 

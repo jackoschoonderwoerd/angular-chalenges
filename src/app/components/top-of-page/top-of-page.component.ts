@@ -8,7 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class TopOfPageComponent implements OnInit {
 
-    public isShown: boolean = false
+    public isShown = false
 
     constructor(private viewportScroller: ViewportScroller) { }
 

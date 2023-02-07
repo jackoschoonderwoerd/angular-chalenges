@@ -8,7 +8,7 @@ import { PillType } from './pill-type.enum';
 })
 export class PillComponent {
     @Input() public type: PillType = PillType.Info;
-    @Input() public label: string = '';
+    @Input() public label = '';
     @Input() public iconClasses: string[] = [];
     @Input() public isActive = false;
     @Input() public canBeSelected = false;
